@@ -1,0 +1,4 @@
+export default {
+    pulicKey: 'pk_test_51HAKO0FpZuulW2DMuCGfEQbJAIYhyyCevIQH67ukZ7LSYsZY0F3ttoZkITaEOlRAmfslKW22c8wbhLXopCOSZMQx00xZwC2QiT',
+    secretKey: 'sk_test_51HAKO0FpZuulW2DMPW1Bg9qwZnkr3eeTddQvBq5FiqSqpSrEjqC46orWPwrWpu7x9r71eRosmDBk9ic2oKnEATtw00K0Wa2kNN'
+};
