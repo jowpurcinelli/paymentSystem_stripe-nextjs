@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Creating Ecommerce app</title>
+        <title>Ecommerce</title>
         
       </Head>
 
