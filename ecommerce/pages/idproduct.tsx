@@ -45,10 +45,13 @@ export const getStaticProps: GetStaticProps = async ( { params } ) => {
     });
     
 
+    
     const sku = await stripe.skus.retrieve(params.skuId as string);
     
     return {
-        props: { },
+        props: {
+            sku: sku,
+         },
     };
 };
 
