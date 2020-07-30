@@ -1,6 +1,6 @@
 import React from 'react';
 import Stripe from 'stripe';
-import { GetStaticPaths } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 import stripeConfig from '../config/stripe';
 //this will call the stripe api and return it's paths
@@ -20,16 +20,40 @@ export const  getStaticPaths: GetStaticPaths = async ( ) => {
         apiVersion: '2020-03-02',
     });
     
-    const products = await stripe.products.list( );
+    const skus = await stripe.skus.list( );
     
-    console.log(products.data);
+    const paths = skus.data.map((sku) => ({
+        params: {
+            skuId: sku.id,
+
+
+        },
+    }));
+
+    console.log(paths);
 
 
     return {
-        paths: [ ], //array type
+        paths, //array type
         fallback: false,
     };
 };
+
+export const getStaticProps: GetStaticProps = async ( { params } ) => {
+    const stripe = new Stripe( stripeConfig.secretKey, {
+        apiVersion: '2020-03-02',
+    });
+    
+
+    const sku = await stripe.skus.retrieve(params.skuId as string);
+    
+    return {
+        props: { },
+    };
+};
+
+
+
 
 
 
