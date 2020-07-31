@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps = async ( { params } ) => {
 };
 
 
-
+//passes sku properties as string just for crazy solutions later... 
 
 
 
